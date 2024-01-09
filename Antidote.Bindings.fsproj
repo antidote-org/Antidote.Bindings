@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>2.0.5</Version>
+  </PropertyGroup>
+  <!-- Add source files to "fable" folder in Nuget package -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageTags>fable;fable-javascript</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="*.fsproj; **\*.fs; **\*.fsi" PackagePath="fable\" />
+    <Content Include="*.fsproj; *.fs; *.js" Exclude="**\*.fs.js" PackagePath="fable\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <DefineConstants>FABLE_COMPILER</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="React.Svg.fs" />
+    <Compile Include="SignalR/SignalR.fs" />
+    <Compile Include="AzureSpeechSdk/SpeechSDK.fs" />
+    <Compile Include="AzureAcsSdk/AzLogger.fs" />
+    <Compile Include="AzureAcsSdk/AzTracing.fs" />
+    <Compile Include="AzureAcsSdk/AzAbort.fs" />
+    <Compile Include="AzureAcsSdk/AzAuth.fs" />
+    <Compile Include="AzureAcsSdk/AzHttp.fs" />
+    <Compile Include="AzureAcsSdk/AzCommon.fs" />
+    <Compile Include="AzureAcsSdk/AzCalling.fs" />
+    <!-- <Compile Include="AzureAcsSdk/AcsCommunicationsReactBindings.fs" /> -->
+    <Compile Include="Capacitor/Capacitor.fs" />
+    <Compile Include="IonicPortals/Feliz.Ionic.Portals.Definitions.fs" />
+    <Compile Include="IonicPortals/Feliz.Ionic.Portals.Web.fs" />
+    <Compile Include="AzureAcsSdk/AzShared.fs" />
+    <Compile Include="Helpers.fs" />
+    <Compile Include="Elmish.fs" />
+    <Compile Include="Feliz.FullCalendar.fs" />
+    <Compile Include="Feliz.Filepond.fs" />
+    <Compile Include="Feliz.ReactDropZone.fs" />
+    <Compile Include="Feliz.SignatureCanvas.fs" />
+    <Compile Include="Feliz.ReactPhoneNumberInput.fs" />
+    <Compile Include="Feliz.Toastify.fs" />
+    <Compile Include="Feliz.ReactRnd.fs" />
+    <Compile Include="Feliz.QRCode.fs" />
+    <Compile Include="Feliz.ReactRouterDom.fs" />
+    <Compile Include="Feliz.ReactFeather.fs" />
+    <Compile Include="Feliz.UseElmish.fs" />
+    <Compile Include="Feliz.ReactResizeDetector.fs" />
+    <Compile Include="Feliz.MobileDeviceDetect.fs" />
+    <Compile Include="Luxon.fs" />
+  </ItemGroup>
+  <Import Project=".paket\Paket.Restore.targets" />
+</Project>
